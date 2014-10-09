@@ -4,5 +4,16 @@ html
     title Nails database
     link(href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet')
   body
-    h1 Nails database
-    p Nails database
+    .container
+      h1 Nails database
+      form
+        .form-group
+          label Email address
+          input.form-control(type='email' placeholder='user@example.com')
+        .form-group
+          label Password
+          input.form-control(type='password')
+        button.btn.btn-default(type='submit') Login
+        
+        
+        
