@@ -1,0 +1,17 @@
+{
+  "name": "nails-database",
+  "version": "0.0.0",
+  "description": "nails-database ==============",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eabrodie/nails-database.git"
+  },
+  "author": "Eleanor Brodie",
+  "private": true,
+  "dependencies": {
+    "express": "~4.9.6"
+  }
+}
