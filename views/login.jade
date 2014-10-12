@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title Nails database
+    link(href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet')
+  body
+    .container
+      h1 Nails database
+      form(action='/login' method='post')
+        .form-group
+          label Email address
+          input.form-control(type='email' placeholder='user@example.com' name='username')
+        .form-group
+          label Password
+          input.form-control(type='password' name='password')
+        button.btn.btn-default(type='submit') Login
+        
+      form(action='/signup' method='post')
+        .form-group
+          label Email address
+          input.form-control(type='email' placeholder='user@example.com' name='username')
+        .form-group
+          label Password
+          input.form-control(type='password' name='password')
+        button.btn.btn-default(type='submit') Sign up
+        
+        
