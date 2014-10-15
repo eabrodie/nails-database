@@ -8,3 +8,22 @@ html
       h1 Nails database
       p Welccome to my nails database
       a(href='/logout') Logout
+      
+      form(action='/addnew' method='post')
+        .form-groupdoctype html
+html
+  head
+    title Nails database
+    link(href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet')
+  body
+    .container
+      h1 Nails database
+      p Welccome to my nails database
+      a(href='/logout') Logout
+      
+      form(action='/addnew' method='post')
+        .form-group
+          label Polish name
+          input.form-control(type='text' name='polishname')
+        button.btn.btn-default(type='submit') Add new polish
+        

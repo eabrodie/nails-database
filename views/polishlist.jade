@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Nails database
+    link(href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet')
+  body
+    .container
+      h1 Nails database
+      p Welccome to my nails database
+      a(href='/logout') Logout
+      
+      - var values = [];
+      ul
+        each val in values.length ? values : ['There are no values']
+          li= val
