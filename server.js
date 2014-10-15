@@ -9,8 +9,7 @@ var bcrypt = require('bcryptjs');
 var mongod = require('mongod');
 
 var app = express();
-var db = mongod(process.env.DB, ['users']);
-var db2 = mongod(process.env.DB, ['polish1']);
+var db = mongod(process.env.DB, ['users', 'polish']);
 
 
 app.set('views', __dirname + '/views');
@@ -59,7 +58,7 @@ app.post('/signup', function(req, res, next){
 app.post('/login', passport.authenticate('local', {successRedirect: '/'}));
 
 app.post('/addnew', function(req, res, next){
-    db2.polish1.insert({user: req.user, polishname: req.body.polishname}).done(function(){
+    db.polish.insert({user: req.user, name: req.body.polishname}).done(function(){
       res.send('Polish added');
     }, next);
 });
@@ -70,16 +69,11 @@ app.get('/logout', function(req, res, next){
 });
 
 app.get('/list', function(req, res, next){
-  db2.polish1.find({user: req.user}, {_id: false, polishname: true}).done(function(polishname){
-    res.render('polishlist.jade', {polishes: polishname});
+  db.polish.find({user: req.user}).done(function(polishes){
+    res.render('polishlist.jade', {polishes: polishes});
   });
 });
 
-app.get('/list1', function(req, res, next){
-  db2.polish1.find({user: req.user}, {_id: false, polishname: true}).done(function(polishname){
-    res.send({polishes: polishname});
-  });
-});
 
 
 app.listen(3000);
