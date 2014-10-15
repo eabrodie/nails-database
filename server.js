@@ -70,8 +70,14 @@ app.get('/logout', function(req, res, next){
 });
 
 app.get('/list', function(req, res, next){
-  db2.polish1.find({user: req.user}).done(function(polishes){
-    res.render('polishlist.jade', polishes);
+  db2.polish1.find({user: req.user}, {_id: false, polishname: true}).done(function(polishname){
+    res.render('polishlist.jade', {polishes: polishname});
+  });
+});
+
+app.get('/list1', function(req, res, next){
+  db2.polish1.find({user: req.user}, {_id: false, polishname: true}).done(function(polishname){
+    res.send({polishes: polishname});
   });
 });
 

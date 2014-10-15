@@ -9,7 +9,7 @@ html
       p Welccome to my nails database
       a(href='/logout') Logout
       
-      - var values = [];
+      - var values = polishes;
       ul
-        each val in values.length ? values : ['There are no values']
-          li= val
+        each val in polishes.length ? polishes : ['There are no values']
+          li= val.polishname
